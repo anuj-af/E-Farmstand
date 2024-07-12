@@ -16,7 +16,7 @@ E-Farmstand is a web application designed to connect customers with local farm s
 - **Track Orders**: Monitor and manage customer orders efficiently.
 
 ## Technology Stack
-- **Frontend**: React.js, HTML, CSS
+- **Frontend**: HTML, EJS, CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT-based authentication
