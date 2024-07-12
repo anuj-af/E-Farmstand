@@ -19,4 +19,4 @@ E-Farmstand is a web application designed to connect customers with local farm s
 - **Frontend**: HTML, EJS, CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
-- **Authentication**: JWT-based authentication
+- **Authentication**: Passport-based authentication
