@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Edit Farm</h1>
+        <div class="col-6 offset-3">
+            <form method="POST" action="/farms/<%= farm._id %>?_method=PUT" novalidate class="needs-validation">
+                <div class="my-3">
+                    <label class="form-label" for="name">Farm Name</label>
+                    <input class="form-control" id="name" type="text" name="name" value="<%= farm.name %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="city">City</label>
+                    <input class="form-control" id="city" type="text" name="city" value="<%= farm.city %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email" type="text" name="email" value="<%= farm.email %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="imageURL">Image URL</label>
+                    <input class="form-control" id="imageURL" type="text" name="imageURL" value="<%= farm.imageURL %>" required></input>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+            <footer>
+                <a href="/farms">All Farms</a>
+            </footer>
+        </div>
+    </div>

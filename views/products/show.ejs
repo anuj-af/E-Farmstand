@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %>
+    <div class="card m-3 w-auto">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<%= product.imageURL %>" class="img-fluid rounded-start" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <%= product.name %>
+                    </h3>
+                    <h5 class="card-text">Price: $<%= product.price %>
+                    </h5>
+                    <h5 class="card-text text-muted">Category: <%= product.category %>
+                    </h5>
+                    <p class="card-text text-muted">This is a wider card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p>
+                    <a href="/products/<%= product._id %>/edit" class="btn btn-success">Edit Product</a>
+                    <form method="POST" class="d-inline mx-1" action="/products/<%= product._id %>?_method=DELETE">
+                        <button class="btn btn-dark">Delete Product</button>
+                    </form>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 30 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-3 mb-3">
+        <a href="/farms/<%= product.farm._id %>">Farm: <%= product.farm.name %></a>
+    </div>
+    <!-- <a href="/products">Back to Home Page</a> -->
+    <!-- 1. Back to home page btn -->
+    <!-- 2. Sort by category -->

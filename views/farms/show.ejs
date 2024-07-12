@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+    <div class="card m-4">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="<%= farm.imageURL %>" class="img-fluid rounded-start" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3 class="card-title"><%= farm.name %></h3>
+                    <h5 class="card-text">City: <%= farm.city %></h5>
+                    <h5 class="card-text text-muted">Email: <%= farm.email %></h5>
+                    <p class="card-text text-muted">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                    <a href="/farms/<%= farm._id %>/edit" class="btn btn-success">Edit Farm</a>
+                    <form method="POST" class="d-inline mx-1" action="/farms/<%= farm._id %>?_method=DELETE">
+                        <button class="btn btn-dark">Delete Farm</button>
+                    </form>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 2 days ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-4 mb-4">
+        <% if(farm.products.length === 0){ %>
+            <h2>No Products Available</h2>
+        <% } else{ %>
+        <h2>Products</h2>
+        <ul>
+            <% for(let product of farm.products){ %>
+                <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
+            <% } %>
+        </ul>
+        <% } %>
+    </div>
+    <div class="mx-4">
+        <a class="me-2" href="/farms/<%= farm._id %>/product/new">Add Product</a>
+        <a href="/farms">Back to all Farms</a>
+    </div>
+    
+    <!-- 1. Back to home page btn -->
+    <!-- 2. Sort by category -->

@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Edit Product</h1>
+        <div class="col-6 offset-3">
+            <form method="POST" action="/products/<%= product._id %>?_method=PUT" novalidate class="needs-validation">
+                <div class="my-3">
+                    <label class="form-label" for="name">Product Name</label>
+                    <input class="form-control" id="name" type="text" name="name" value="<%= product.name %>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input id="price" name="price" type="text" class="form-control" placeholder="0.00" 
+                        aria-label="price" aria-describedby="price-label" value="<%= product.price %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="category">Category</label>
+                    <select class="form-select" id="category">
+                        <% for(category of categories){ %>
+                            <option value="<%= category %>" <%= product.category === category ? 'selected': '' %>><%= category.charAt(0).toUpperCase() + category.slice(1) %></option>
+                        <% } %>
+                      </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" id="description" type="text" name="description" required><%= product.description %></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="imageURL">Image URL</label>
+                    <input class="form-control" id="imageURL" type="text" name="imageURL" value="<%= product.imageURL %>" required></input>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+            <footer>
+                <a href="/products/<%= product._id %>">Back</a>
+            </footer>
+        </div>
+    </div>
